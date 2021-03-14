@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 30px 0;
 }
 
 code {
@@ -12,3 +13,17 @@ code {
     monospace;
 }
 
+.invalid-feedback {
+  display: block;
+}
+
+#notfound {
+  margin: 30px 0 0;
+}
+
+#chart {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  margin: 30px 0 0;
+}

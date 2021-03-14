@@ -1,20 +1,19 @@
 import { Form } from 'react-bootstrap';
 
 export const renderField = ({
-    fieldType, input, backError, label, loading, meta: { asyncValidating, touched, error }, className, ...rest
+    fieldType, input, backError, label, loading, meta: { asyncValidating, touched, error, warning }, className, ...rest
 }) => {
     const inputName = input.name;
-    const isError = (touched && error) || backError;
-    const errorMessage = error || backError;
+    const isError = touched && (error || warning);
 
     return (
         <Form.Group controlId={inputName}>
             <Form.Label>{label}</Form.Label>
-            <Form.Control type="text" placeholder="End date" />
+            <Form.Control type="date" placeholder={label} {...input} />
 
             {isError && (
                 <Form.Control.Feedback type="invalid">
-                    {errorMessage}
+                    {isError}
                 </Form.Control.Feedback>
             )}
         </Form.Group>

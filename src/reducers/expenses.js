@@ -8,7 +8,7 @@ export default (state = initState, action) => {
         case 'SET_EXPENSES':
             return {
                 ...state,
-                list: action.data.data
+                list: action.data
             };
 
         default:
